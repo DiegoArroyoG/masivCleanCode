@@ -3,7 +3,7 @@ package com.masiv.cleancode.roulette.utils;
 import java.util.Arrays;
 import java.util.List;
 
-import com.masiv.cleancode.roulette.Models.Bet;
+import com.masiv.cleancode.roulette.Models.Entity.Bet;
 
 public final class ValidateBet {
     private static final int MAX_VALID_NUMBER = 36;

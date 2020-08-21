@@ -1,9 +1,11 @@
-package com.masiv.cleancode.roulette.Models;
+package com.masiv.cleancode.roulette.Models.Entity;
+
+import java.io.Serializable;
 
 import com.masiv.cleancode.roulette.utils.Play;
 import com.masiv.cleancode.roulette.utils.Result;
 
-public class Bet {
+public class Bet implements Serializable{
     private Long userId;
     private Integer betNumber;
     private String betColor;
@@ -47,4 +49,5 @@ public class Bet {
     public void setResult(Result result) {
         this.result = result;
     }
+    private static final long serialVersionUID = 3750480266729122349L;
 }
