@@ -1,4 +1,4 @@
-package com.masiv.cleancode.roulette.utils;
+package com.masiv.cleancode.roulette.Utils;
 
 public final class Play {
     private Play(){
