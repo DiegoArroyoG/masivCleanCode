@@ -2,8 +2,8 @@ package com.masiv.cleancode.roulette.Models.Entity;
 
 import java.io.Serializable;
 
-import com.masiv.cleancode.roulette.utils.Play;
-import com.masiv.cleancode.roulette.utils.Result;
+import com.masiv.cleancode.roulette.Utils.Play;
+import com.masiv.cleancode.roulette.Utils.Result;
 
 public class Bet implements Serializable{
     private Long userId;
