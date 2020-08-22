@@ -26,8 +26,20 @@ public class RouletteServiceImp implements RouletteService {
     }
     @Override
     @Transactional(readOnly = true)
-    public Roulette findOne(Long id) {
+    public Roulette findById(Long id) {
         return rouletteDao.findById(id).orElse(null);
+    }
+    @Override
+    @Transactional(readOnly = true)
+    public Roulette findOpenRoulette() {
+        Roulette roulette = null;
+        for(Roulette r : rouletteDao.findAll()){
+            if(r.getState()){
+                roulette = r;
+            }
+        }
+        
+        return roulette;
     }
     @Override
     @Transactional
