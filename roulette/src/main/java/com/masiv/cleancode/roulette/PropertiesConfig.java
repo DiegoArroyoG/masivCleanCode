@@ -9,5 +9,5 @@ import org.springframework.context.annotation.PropertySources;
     @PropertySource("classpath:database.properties")
 })
 
-public class DataBasePropertiesConfig {
+public class PropertiesConfig {
 }

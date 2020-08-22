@@ -6,7 +6,8 @@ import com.masiv.cleancode.roulette.Models.Entity.Roulette;
 
 public interface RouletteService{
     public List<Roulette> findAll();
-	public void save(Roulette roulette);
-	public Roulette findOne(Long id);	
+    public void save(Roulette roulette);
+    public Roulette findById(Long id);
+    public Roulette findOpenRoulette();	
     public void delete(Long id);
 }

@@ -2,35 +2,47 @@ package com.masiv.cleancode.roulette.Models.Entity;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.ArrayList;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="clientes")
+@Table(name="roulette")
 public class Roulette implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "bet_result")
-    private List<Bet> betResults;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "bet_id")
+    private List<Bet> bets;
     private boolean state;
 
+    public Roulette(){
+        this.bets = new ArrayList<Bet>();
+        this.state = false;
+    }
     public Long getId(){
         return this.id;
     }
     public void setId(Long id){
         this.id = id;
     }
-    public List<Bet> getResults(){
-        return this.betResults;
+    public List<Bet> getBets(){
+        return this.bets;
     }
-    public void setResults(List<Bet> betResults){
-        this.betResults = betResults;
+    public void setBets(List<Bet> betResults){
+        this.bets = betResults;
+    }
+    public void addBet(Bet betResults){
+        this.bets.add(betResults);
     }
     public boolean getState(){
        return this.state;
